@@ -11,6 +11,8 @@ import Hotel.Acomodacoes.Contracts.RegraDeAcomodacao;
 
 public class Apartamento implements RegraDeAcomodacao {
 
+  public double preco = 450;
+
   @Override
   public void regras(Reserva reserva) {
     System.out.println(reserva.getGroupoFamiliar());

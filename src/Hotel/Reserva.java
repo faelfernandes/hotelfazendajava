@@ -8,6 +8,15 @@ public class Reserva {
   private Boolean isGroupoFamiliar = false;
   private Hospede[] hospedes;
   private Acomodacao acomodacao;
+  private Boolean isFree = false;
+
+  public Boolean getIsFree() {
+    return isFree;
+  }
+
+  public void setIsFree(Boolean isFree) {
+    this.isFree = isFree;
+  }
 
   public Acomodacao getAcomodacao() {
     return acomodacao;
@@ -41,7 +50,7 @@ public class Reserva {
     return valorTotal;
   }
 
-  public void verificaRegras() {
+  public void confirmarReserva() {
     acomodacao.getRegra().regras(this);
   }
 

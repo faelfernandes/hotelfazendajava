@@ -5,6 +5,14 @@ desfrutar gratuitamente enquanto estiver hospedado no hotel. */
 
 package Hotel.Acomodacoes.Apartamento;
 
-public class ApartamentoDuplo {
+import Hotel.Reserva;
+import Hotel.Acomodacoes.Contracts.RegraDeAcomodacao;
+
+public class ApartamentoDuplo implements RegraDeAcomodacao {
+  
+  @Override
+  public void regras(Reserva reserva) {
+    // TODO Auto-generated method stub
+  }
 
 }

@@ -1,5 +1,6 @@
 package Hotel;
 
+import Hotel.Produto.Produto;
 import Pessoa.Pessoa;
 
 public class Hospede extends Pessoa {
@@ -20,6 +21,12 @@ public class Hospede extends Pessoa {
 
   public void setPrincipal(Boolean principal) {
     this.principal = principal;
+  }
+
+  public void pedirProduto(Reserva reserva, Produto produto, String name, Integer quantidade) {
+    // this.produto = produto;
+    
+    /* Adicionar o valor do produto na reserva */
   }
 
 }
