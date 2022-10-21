@@ -6,7 +6,7 @@ public class Activity implements ActivityInterface {
 
   private String name;
   private double price = 0;
-  private Boolean isMaior = false;
+  private Boolean isAdult = false;
 
   public String getName() {
     return name;
@@ -24,24 +24,12 @@ public class Activity implements ActivityInterface {
     this.price = price;
   }
 
-  public Boolean getIsMaior() {
-    return isMaior;
-  }
-
-  public void setIsMaior(Boolean isMaior) {
-    this.isMaior = isMaior;
-  }
-
-  @Override
   public Boolean getIsAdult() {
-    // TODO Auto-generated method stub
-    return null;
+    return isAdult;
   }
 
-  @Override
   public void setIsAdult(Boolean isAdult) {
-    // TODO Auto-generated method stub
-    
+    this.isAdult = isAdult;
   }
 
 }

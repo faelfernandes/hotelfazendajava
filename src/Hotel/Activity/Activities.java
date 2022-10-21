@@ -11,14 +11,14 @@ public enum Activities {
   CAMINHADA_COM_INSTRUTOR(new WalkWithInstructor()),
   PESCARIA(new Fishing());
 
-  private ActivityInterface atividade;
+  private ActivityInterface activity;
 
-  Activities(ActivityInterface atividade) {
-    this.atividade = atividade;
+  Activities(ActivityInterface activity) {
+    this.activity = activity;
   }
 
-  public ActivityInterface getAtividade() {
-    return atividade;
+  public ActivityInterface getActivity() {
+    return activity;
   }
 
 }

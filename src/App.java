@@ -1,37 +1,74 @@
-import Hotel.Hospede;
-import Hotel.Reserva;
-import Hotel.Acomodacoes.Acomodacao;
-/* import Hotel.Produto.Produto;
-import Hotel.Produto.Produtos;
-import Hotel.Produto.Bebidas.Bebidas; */
+import java.util.Scanner;
+import java.io.IOException;
+
+import Test.Hotel.Accommodation.Apartment.DoubleApartmentTest;
+import Test.Hotel.Accommodation.Apartment.TripleApartmentTest;
+import Test.Hotel.Accommodation.Apartment.SpecialPackages.Double.ApartmentMargaridaTest;
+import Test.Hotel.Accommodation.Apartment.SpecialPackages.Double.HoneymoonApartmentTest;
+import Test.Hotel.Accommodation.Chalet.DoubleChaletTest;
+import Test.Hotel.Accommodation.Chalet.TripleChaletTest;
+import Test.Hotel.Accommodation.Room.DoubleRoomTest;
+import Test.Hotel.Accommodation.Room.SimpleRoomTest;
 
 public class App {
     public static void main(String[] args) throws Exception {
+        menu();
+        choose();
+    }
 
-        /* Reserva reservaQuartoDuplo1 = new Reserva();
-        Hospede hospedeQuartoDuplo1 = new Hospede("Rafael", 23, true);
-        Hospede hospedeQuartoDuplo2 = new Hospede("Gabriela", 18);
-        Hospede[] hospedesQuarto = new Hospede[2];
-        hospedesQuarto[0] = hospedeQuartoDuplo1;
-        hospedesQuarto[1] = hospedeQuartoDuplo2;
-        reservaQuartoDuplo1.setHospedes(hospedesQuarto);
-        reservaQuartoDuplo1.setAcomodacao(Acomodacao.QUARTO_DUPLO);
-        reservaQuartoDuplo1.confirmarReserva(); */
+    public static void menu() {
+        System.out.println("========= MENU =========");
+        System.out.println("[1] - Quarto Simples");
+        System.out.println("[2] - Quarto Duplo");
+        System.out.println("[3] - Apartamento Duplo");
+        System.out.println("[4] - Apartamento Duplo | Pacote: Lua te Mel");
+        System.out.println("[5] - Apartamento Duplo | Pacote: Margarida");
+        System.out.println("[6] - Apartamento Triplo");
+        System.out.println("[7] - Chalé Duplo");
+        System.out.println("[8] - Chalé Triplo");
+    }
 
-        Reserva reserva2 = new Reserva();
-        reserva2.setIsGroupoFamiliar(true);
-        Hospede hospedeChale1 = new Hospede("Francisco", 43, true);
-        Hospede hospedeChale2 = new Hospede("Maria", 38);
-        Hospede hospedeChale3 = new Hospede("Joãozinho", 6);
-        Hospede[] hospedes = new Hospede[3];
-        hospedes[0] = hospedeChale1;
-        hospedes[1] = hospedeChale2;
-        hospedes[2] = hospedeChale3;
-        reserva2.setHospedes(hospedes);
-        reserva2.setAcomodacao(Acomodacao.APARTAMENTO_DUPLO_LUA_DE_MEL);
-        reserva2.confirmarReserva();
-        // hospedeChale3.pedirProduto(reserva2, Produtos.BEBIDA, "Água", 2);
+    public static void choose() {
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.println("Escolha um número para testar:");
+            int choice = sc.nextInt();
+            System.out.println("\n================== ### ==================");
+            switch (choice) {
+                case 1:
+                    SimpleRoomTest.test();
+                    break;
+                case 2:
+                    DoubleRoomTest.test();
+                    break;
+                case 3:
+                    DoubleApartmentTest.test();
+                    break;
+                case 4:
+                    HoneymoonApartmentTest.test();
+                    break;
+                case 5:
+                    ApartmentMargaridaTest.test();
+                    break;
+                case 6:
+                    TripleApartmentTest.test();
+                    break;
+                case 7:
+                    DoubleChaletTest.test();
+                    break;
+                case 8:
+                    TripleChaletTest.test();
+                    break;
+                default:
+                    System.out.println("Valor inválido");
+                    menu();
+            }
+        }
+    }
 
-        // hospedeChale3.pedirProduto(Produto.BEBIDA, "Agua");
+    public void clear() throws InterruptedException, IOException {
+        if (System.getProperty("os.name").contains("Windows"))
+            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+        else
+            Runtime.getRuntime().exec("clear");
     }
 }
